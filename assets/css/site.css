@@ -99,6 +99,45 @@ h1 {
   margin: 0.7rem 0 1rem;
   font-size: clamp(2.2rem, 5vw, 3.85rem);
   font-weight: 800;
+  line-height: 1.05;
+}
+
+/* Verb rotator
+   clip-path clips visually but does NOT affect inline baseline (unlike overflow:hidden).
+   This lets verb-clip be inline-block while keeping baseline aligned with surrounding text. */
+.verb-clip {
+  display: inline-block;
+  position: relative;
+  overflow: visible;
+  clip-path: inset(0 0 -0.15em 0); /* extend below to never clip the underline */
+  white-space: nowrap;
+  vertical-align: baseline;
+  transition: width 0.24s ease;
+}
+
+.verb-word {
+  display: inline-block;
+  border-bottom: 0.11em solid #059669;
+  padding-bottom: 0.01em;
+  transform: translateX(0);
+  transition: transform 0.42s ease;
+}
+
+/* Incoming word: placed absolutely so it overlaps the outgoing one */
+.verb-next {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translateX(108%);
+}
+
+.verb-word.slide-out {
+  transform: translateX(-108%);
+}
+
+
+.verb-word.slide-in {
+  transform: translateX(0);
 }
 
 h2 {
@@ -117,6 +156,7 @@ h3 {
   color: var(--muted);
   font-size: 1.25rem;
   max-width: 62ch;
+  margin-inline: auto;
 }
 
 .chip {

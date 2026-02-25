@@ -2,8 +2,8 @@
 <div class="landing">
   <section class="hero-grid">
     <div>
-      <div class="chip">The natural way to teach anything</div>
-      <h1>Teach like it's real - on any shared screen</h1>
+      <div class="chip">The natural way to <span data-chip-verb>teach</span> anything</div>
+      <h1><span class="verb-clip" data-verb-rotator><span class="verb-word">Teach</span></span> like it's real - on any shared screen</h1>
       <p class="lead">
         Sketch diagrams, circle key ideas, and write notes in your own hand, live in your videos and classes.
       </p>
@@ -97,4 +97,60 @@
     </p>
   </section>
 </div>
+<script>
+  (function () {
+    var el = document.querySelector("[data-verb-rotator]");
+    if (!el) return;
+
+    var chipVerb = document.querySelector("[data-chip-verb]");
+
+    var words = ["Teach", "Coach", "Sketch", "Explain"];
+    /* chip shows lowercase, headline shows title-case */
+    var wordsLower = ["teach", "coach", "sketch", "explain"];
+    var index = 0;
+    var cycleMs = 4000;
+
+    var currentWord = el.querySelector(".verb-word");
+    el.style.width = currentWord.getBoundingClientRect().width + "px";
+
+    setInterval(function () {
+      var nextIndex = (index + 1) % words.length;
+
+      /* — chip: instant text swap — */
+      if (chipVerb) {
+        chipVerb.textContent = wordsLower[nextIndex];
+      }
+
+      /* — headline slide — */
+      var nextWord = document.createElement("span");
+      nextWord.className = "verb-word verb-next";
+      nextWord.textContent = words[nextIndex];
+      el.appendChild(nextWord);
+
+      var currentWidth = currentWord.getBoundingClientRect().width;
+      var nextWidth = nextWord.getBoundingClientRect().width;
+      el.style.width = Math.max(currentWidth, nextWidth) + "px";
+
+      requestAnimationFrame(function () {
+        requestAnimationFrame(function () {
+          currentWord.classList.add("slide-out");
+          nextWord.classList.add("slide-in");
+        });
+      });
+
+      currentWord.addEventListener(
+        "transitionend",
+        function (event) {
+          if (event.propertyName !== "transform") return;
+          if (currentWord.parentNode) currentWord.parentNode.removeChild(currentWord);
+          nextWord.classList.remove("verb-next", "slide-in");
+          currentWord = nextWord;
+          index = nextIndex;
+          el.style.width = currentWord.getBoundingClientRect().width + "px";
+        },
+        { once: true }
+      );
+    }, cycleMs);
+  })();
+</script>
 {{ end }}
