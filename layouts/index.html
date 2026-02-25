@@ -1,0 +1,100 @@
+{{ define "main" }}
+<div class="landing">
+  <section class="hero-grid">
+    <div>
+      <div class="chip">The natural way to teach anything</div>
+      <h1>Teach like it's real - on any shared screen</h1>
+      <p class="lead">
+        Sketch diagrams, circle key ideas, and write notes in your own hand, live in your videos and classes.
+      </p>
+      <p class="cta-group">
+        <a class="btn btn-primary" href="{{ site.Params.windowsStoreUrl }}">Get it on Windows Store</a>
+      </p>
+      <p class="caption">Works with any tablet or iPad as your drawing surface</p>
+    </div>
+    <div class="hero-media">
+      <div class="hero-glow"></div>
+      <img class="hero-image" src="/images/2reflect-screenshot.png" alt="2Reflect in action - tablet with pen showing annotations on screen">
+    </div>
+  </section>
+
+  <section class="section-space">
+    <div class="section-center">
+      <h2>Perfect for anyone who teaches or explains</h2>
+      <p class="lead section-lead">Draw, annotate, and guide your audience through complex ideas</p>
+    </div>
+
+    <div class="card-grid four-col">
+      <article class="card role-teachers">
+        <div class="card-icon icon-teachers" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none">
+            <rect x="4" y="5" width="16" height="11" rx="1.8" stroke="currentColor" stroke-width="1.8"/>
+            <path d="M9 19h6M12 16v3" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <h3>Teachers</h3>
+        <p>Annotate slides, highlight key concepts, and draw diagrams as you explain them to your students.</p>
+      </article>
+      <article class="card role-creators">
+        <div class="card-icon icon-creators" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none">
+            <rect x="4" y="7" width="10" height="10" rx="1.8" stroke="currentColor" stroke-width="1.8"/>
+            <path d="M14 10.2l5.2-2.6v8.8L14 13.8v-3.6z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <h3>Creators</h3>
+        <p>Make your tutorials more engaging by drawing arrows, boxes, and notes right on screen.</p>
+      </article>
+      <article class="card role-coders">
+        <div class="card-icon icon-coders" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none">
+            <path d="M9 8l-4 4 4 4M15 8l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <h3>Coders</h3>
+        <p>Circle important code blocks, draw flow diagrams, and explain architecture during pair programming.</p>
+      </article>
+      <article class="card role-coaches">
+        <div class="card-icon icon-coaches" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none">
+            <circle cx="12" cy="12" r="4.5" stroke="currentColor" stroke-width="1.8"/>
+            <circle cx="12" cy="12" r="1.5" fill="currentColor"/>
+            <path d="M12 3.5v2.4M12 18.1v2.4M20.5 12h-2.4M5.9 12H3.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <h3>Coaches</h3>
+        <p>Guide clients through processes, highlight action items, and create visual clarity in sessions.</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="section-space">
+    <div class="feature-panel">
+      <div class="feature-panel-inner">
+        <div>
+          <h2>Think with pen and paper. Share it live.</h2>
+          <p class="feature-copy">
+            Use your tablet or iPad as a natural drawing surface. Sketch directly over your screen share in Zoom, Teams, Meet, or any video platform. Your audience sees every stroke in real time.
+          </p>
+          <ul class="bullet-list">
+            <li>Works on top of any application</li>
+            <li>Natural pen and touch input</li>
+            <li>Clear, erase, and start fresh anytime</li>
+          </ul>
+        </div>
+        <div class="feature-cta-wrap">
+          <a class="btn btn-light" href="{{ site.Params.windowsStoreUrl }}">Download Now</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-space section-center">
+    <h2 class="final-heading">Ready to bring your ideas to life?</h2>
+    <p class="lead">Download from the Windows Store and start teaching like it's real</p>
+    <p class="cta-group">
+      <a class="btn btn-dark" href="{{ site.Params.windowsStoreUrl }}">Get 2Reflect for Windows</a>
+    </p>
+  </section>
+</div>
+{{ end }}

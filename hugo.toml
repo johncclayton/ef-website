@@ -1,0 +1,26 @@
+baseURL = "https://effectiveflow.com/"
+languageCode = "en-us"
+title = "Effective Flow"
+enableRobotsTXT = true
+
+[params]
+  companyName = "Effective Flow"
+  productName = "2Reflect"
+  productTagline = "Teach like it's real on any shared screen"
+  windowsStoreUrl = "https://www.microsoft.com/store/apps/windows"
+
+[menus]
+  [[menus.main]]
+    name = "Home"
+    pageRef = "/"
+    weight = 10
+
+  [[menus.main]]
+    name = "Blog"
+    pageRef = "/blog"
+    weight = 20
+
+  [[menus.main]]
+    name = "Contact"
+    pageRef = "/contact"
+    weight = 30
