@@ -1,6 +1,6 @@
 <footer class="site-footer">
   <div class="container">
     <p>&copy; {{ now.Year }} {{ site.Params.companyName }}. All rights reserved.</p>
-    <p><a href="{{ "/privacy-policy/" | relURL }}">Privacy Policy</a></p>
+    {{ with site.GetPage "/privacy-policy" }}<p><a href="{{ .RelPermalink }}">Privacy Policy</a></p>{{ end }}
   </div>
 </footer>
