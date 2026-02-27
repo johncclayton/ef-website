@@ -1,14 +1,16 @@
 ---
 title: "Privacy Policy"
-description: "Privacy policy for Effective Flow products."
+description: "Privacy policy for the 2Reflect application."
 ---
 
 ## 2Reflect Privacy Policy
 
-This application does not collect, store, or transmit personal data to any other system except the 2Reflect web client, which is used to draw/annotate the screen (in case of doubt, that's YOUR other computer).
+This application does not collect, store, or transmit personal data (such as your name, email address, or account identifiers) to any remote servers or third parties. The only data it sends over the network is the drawing/annotation information required to mirror your screen to the 2Reflect web client running in your browser on another device that you control.
 
-There are analytics and telemetry data collected internally within the app to help with development - none of that leaves your local network either.  None of this telemetry includes any personal / identity information of any kind whatsoever.  Seriously, we don't really care who you are - we just care that you find this software useful and tell all your friends about it.
+## Telemetry
 
-Tell all your friends about it.
+Within the app, we collect limited technical analytics and telemetry to help improve stability and performance. Examples include the app version, basic configuration flags, performance metrics (such as frame rates and memory usage), and non-identifying error logs or crash reports. 
+
+This telemetry is stored only on your devices and, aside from the screen-annotation data described above, is not transmitted outside your local network or to any external service. None of this telemetry includes any personal or identity information of any kind whatsoever. Seriously, we don't really care who you are – we just care that you find this software useful and tell all your friends about it.
 
 If you have any questions, contact us at [sales@effective-flow.ch](mailto:sales@effective-flow.ch).
