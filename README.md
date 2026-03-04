@@ -1,65 +1,62 @@
-# Effective Flow Website
+# Effective Flow Websites
 
-Hugo-based website for Effective Flow, focused on the 2Reflect product, with a starter blog and Azure Static Web Apps deployment workflows.
+This repo contains two Hugo sites deployed to separate Azure Static Web Apps.
+
+## Sites
+
+| Site | Directory | Domain | Azure SWA | Secret |
+|------|-----------|--------|-----------|--------|
+| Company | `sites/company/` | effective-flow.ch | victorious-island-06ef03503 | `AZURE_STATIC_WEB_APPS_API_TOKEN_VICTORIOUS_ISLAND_06EF03503` |
+| 2Reflect | `sites/2reflect/` | 2reflect.effective-flow.com | agreeable-stone-0fdc8de03 | `AZURE_STATIC_WEB_APPS_API_TOKEN_AGREEABLE_STONE_0FDC8DE03` |
 
 ## Stack
 
-- Hugo (extended)
+- Hugo (extended) 0.150.0
 - Azure Static Web Apps (Free plan)
 - GitHub Actions
 
 ## Local Setup (Windows)
 
-Install Hugo Extended with one of the following:
+Install Hugo Extended:
 
 - `winget install Hugo.Hugo.Extended`
-- `choco install hugo-extended -confirm`
 
-Verify install:
+Run either site locally:
 
-- `hugo version`
+```
+cd sites/company
+hugo server -D
+```
 
-Run locally:
+```
+cd sites/2reflect
+hugo server -D
+```
 
-- `hugo server -D`
-
-The site is available at `http://localhost:1313`.
+Sites are available at `http://localhost:1313`.
 
 ## Content Structure
 
-- Product content: `content/2reflect/_index.md`
-- Blog section: `content/blog/`
-- Contact page: `content/contact.md`
+### Company site (`sites/company/`)
+- Home page: company intro and consulting
+- Blog: `content/blog/`
+- Contact: `content/contact.md`
+
+### 2Reflect product site (`sites/2reflect/`)
+- Landing page: product hero, features, CTAs
+- Privacy policy: `content/privacy-policy.md`
 
 ## Branching and Deployment Strategy
 
-- `main` -> production environment
-- `staging` -> stable pre-production branch environment
+- `main` -> production environment (both SWAs)
+- `staging` -> staging environment (both SWAs)
 - feature branches -> PR to `staging` for review
 - promote by PR from `staging` to `main`
 
 ## GitHub Actions
 
-- CI build check: `.github/workflows/ci.yml`
-- Azure deploy workflow: `.github/workflows/azure-static-web-apps-jolly-water-0d22fdc03.yml`
+- CI build check: `.github/workflows/ci.yml` (builds both sites)
+- Company deploy: `.github/workflows/deploy-company.yml`
+- 2Reflect deploy: `.github/workflows/deploy-2reflect.yml`
 
-The Azure workflow deploys for pushes to both `main` and `staging`, and creates PR preview environments.
-
-## Azure Static Web Apps Setup Checklist
-
-1. Create Azure Static Web App (Free plan) connected to this repo.
-2. Set production branch to `main`.
-3. Confirm workflow secret exists in GitHub:
-   - `AZURE_STATIC_WEB_APPS_API_TOKEN_JOLLY_WATER_0D22FDC03`
-4. Create and push `staging` branch.
-5. Confirm `staging` environment URL appears after first `staging` push.
-6. Add custom domain to production environment only.
-
-## Free Plan Notes
-
-- Supports your required `main` + `staging` + PR preview flow.
-- Limits include:
-  - 3 preview environments per app
-  - 250 MB per environment (500 MB total storage)
-  - 100 GB/month included bandwidth
-  - no SLA
+Deploy workflows use path filters so only the affected site is rebuilt and deployed when its files change.

@@ -1,0 +1,9 @@
+<footer class="site-footer">
+  <div class="container">
+    <p>&copy; {{ now.Year }} {{ site.Params.companyName }}. All rights reserved.</p>
+    <p>
+      {{ with site.GetPage "/privacy-policy" }}<a href="{{ .RelPermalink }}">Privacy Policy</a> &middot; {{ end }}
+      <a href="{{ site.Params.companySiteUrl }}">Effective Flow</a>
+    </p>
+  </div>
+</footer>

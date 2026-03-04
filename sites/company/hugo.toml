@@ -1,13 +1,12 @@
-baseURL = "https://effectiveflow.com/"
+baseURL = "https://effective-flow.ch/"
 languageCode = "en-us"
 title = "Effective Flow"
 enableRobotsTXT = true
 
 [params]
   companyName = "Effective Flow"
-  productName = "2Reflect"
-  productTagline = "Teach like it's real on any shared screen"
-  windowsStoreUrl = "https://www.microsoft.com/store/apps/windows"
+  description = "Software and consulting for people who teach and explain."
+  productSiteUrl = "https://2reflect.effective-flow.com"
 
 [menus]
   [[menus.main]]
@@ -24,3 +23,10 @@ enableRobotsTXT = true
     name = "Contact"
     pageRef = "/contact"
     weight = 30
+
+  [[menus.main]]
+    name = "2Reflect"
+    url = "https://2reflect.effective-flow.com"
+    weight = 40
+    [menus.main.params]
+      external = true

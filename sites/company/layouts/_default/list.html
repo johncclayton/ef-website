@@ -1,0 +1,18 @@
+{{ define "main" }}
+  <section class="content">
+    <h1>{{ .Title }}</h1>
+    {{ with .Content }}
+      {{ . }}
+    {{ end }}
+    <ul class="post-list">
+      {{ range .Pages }}
+        <li>
+          <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+          {{ if .Date }}<span class="meta">{{ .Date.Format "Jan 2, 2006" }}</span>{{ end }}
+        </li>
+      {{ else }}
+        <li>No posts yet.</li>
+      {{ end }}
+    </ul>
+  </section>
+{{ end }}

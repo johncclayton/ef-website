@@ -1,0 +1,29 @@
+baseURL = "https://2reflect.effective-flow.com/"
+languageCode = "en-us"
+title = "2Reflect"
+enableRobotsTXT = true
+
+[params]
+  companyName = "Effective Flow"
+  productName = "2Reflect"
+  productTagline = "Teach like it's real on any shared screen"
+  windowsStoreUrl = "https://www.microsoft.com/store/apps/windows"
+  companySiteUrl = "https://effective-flow.ch"
+
+[menus]
+  [[menus.main]]
+    name = "Home"
+    pageRef = "/"
+    weight = 10
+
+  [[menus.main]]
+    name = "Privacy Policy"
+    pageRef = "/privacy-policy"
+    weight = 20
+
+  [[menus.main]]
+    name = "Effective Flow"
+    url = "https://effective-flow.ch"
+    weight = 30
+    [menus.main.params]
+      external = true

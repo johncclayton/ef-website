@@ -1,0 +1,28 @@
+{{ define "main" }}
+<div class="landing">
+  <section class="hero-grid">
+    <div>
+      <h1>Software and consulting for people who teach and explain</h1>
+      <p class="lead">
+        Effective Flow builds practical tools and provides consulting to help educators, coaches, and engineers communicate ideas more clearly.
+      </p>
+      <p class="cta-group">
+        <a class="btn btn-primary" href="{{ site.Params.productSiteUrl }}">Discover 2Reflect</a>
+      </p>
+    </div>
+    <div>
+      <div class="card-grid" style="gap: 1.5rem;">
+        <article class="card">
+          <h3>2Reflect</h3>
+          <p>Draw, annotate, and explain live on any shared screen. Use your tablet as a natural drawing surface during video calls.</p>
+          <p><a href="{{ site.Params.productSiteUrl }}">Learn more &rarr;</a></p>
+        </article>
+        <article class="card">
+          <h3>Consulting</h3>
+          <p>Hands-on engineering guidance for teams building real-time communication and media software.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+</div>
+{{ end }}

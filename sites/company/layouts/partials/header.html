@@ -4,7 +4,7 @@
     <nav>
       <ul class="nav-list">
         {{ range site.Menus.main }}
-          <li><a href="{{ .URL }}">{{ .Name }}</a></li>
+          <li><a href="{{ .URL }}"{{ with .Params.external }} target="_blank" rel="noopener"{{ end }}>{{ .Name }}</a></li>
         {{ end }}
       </ul>
     </nav>

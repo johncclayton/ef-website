@@ -23,5 +23,10 @@ jobs:
           hugo-version: "0.150.0"
           extended: true
 
-      - name: Build site
+      - name: Build company site
         run: hugo --minify
+        working-directory: sites/company
+
+      - name: Build 2reflect site
+        run: hugo --minify
+        working-directory: sites/2reflect
