@@ -22,6 +22,11 @@ enableRobotsTXT = true
     weight = 20
 
   [[menus.main]]
+    name = "Terms of Service"
+    pageRef = "/terms"
+    weight = 25
+
+  [[menus.main]]
     name = "Effective Flow"
     url = "https://effective-flow.ch"
     weight = 30
